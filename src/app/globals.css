@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes collapsibleDown {
+  from {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes collapsibleUp {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.animate-collapsible-down {
+  animation: collapsibleDown 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-collapsible-up {
+  animation: collapsibleUp 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
